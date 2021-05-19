@@ -30,6 +30,9 @@ const App = () => {
   // propsで渡す関数の場合はuseCallbackを使った方が良い。
   const onInsert = useCallback(
     (text) => {
+      // TODO: メッセージ表示
+      if (!text) return;
+
       const todo = {
         id: nextId.current,
         text,
