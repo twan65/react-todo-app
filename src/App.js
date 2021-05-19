@@ -41,6 +41,7 @@ const App = () => {
     [todos],
   );
 
+  // TODO削除:filter使って永続性を守る
   const onRemove = useCallback(
     (id) => {
       const tempTodos = todos.filter((todo) => todo.id !== id);
@@ -49,10 +50,21 @@ const App = () => {
     [todos],
   );
 
+  const onToggle = useCallback(
+    (id) => {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
+      );
+    },
+    [todos],
+  );
+
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} onRemove={onRemove} />
+      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
 };
