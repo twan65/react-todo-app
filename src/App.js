@@ -8,7 +8,7 @@ function createBulkTodos() {
   for (let i = 1; i <= 2500; i++) {
     array.push({
       id: i,
-      text: '</span><span class="cd2 co31">할</span> <span class="cd2 co31">일</span> <span class="cd2 co49">${</span><span class="cd2 co33">i</span><span class="cd2 co49">}</span><span class="cd2 co31">',
+      text: 'やること',
       checked: false,
     });
   }
